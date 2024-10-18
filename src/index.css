@@ -1,0 +1,409 @@
+.back-to-top {
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    transition: 0.5s;
+    z-index: 99;
+}
+/*** Navbar ***/
+.navbar-bg{
+    background-color: #2c3e50;
+}
+.navbar-light .navbar-nav .nav-link {
+    position: relative;
+    margin-right: 25px;
+    padding: 35px 0;
+    color: var(--bs-white);
+    font-size: 17px;
+    font-weight: 400;
+    outline: none;
+    transition: .5s;
+    
+    
+}
+
+.sticky-top.navbar-light .navbar-nav .nav-link {
+    padding: 20px 0;
+    color: var(--bs-white);
+}
+
+.navbar-light .navbar-nav .nav-link:hover,
+.navbar-light .navbar-nav .nav-link.active {
+    color: var(--bs-primary);
+}
+
+.navbar-light .navbar-brand img {
+    max-height: 60px;
+    transition: .5s;
+}
+
+.sticky-top.navbar-light .navbar-brand img {
+    max-height: 45px;
+}
+
+.navbar .dropdown-toggle::after {
+    border: none;
+    content: "\f107";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 600;
+    vertical-align: middle;
+    margin-left: 8px;
+}
+
+.dropdown .dropdown-menu a:hover {
+    background: var(--bs-primary);
+    color: var(--bs-white);
+}
+
+.navbar .nav-item:hover .dropdown-menu {
+    transform: rotateX(0deg);
+    visibility: visible;
+    background: var(--bs-light);
+    transition: .5s;
+    opacity: 1;
+}
+
+@media (max-width: 991.98px) {
+    .sticky-top.navbar-light {
+        position: relative;
+        background: var(--bs-white);
+    }
+
+    .navbar.navbar-expand-lg .navbar-toggler {
+        padding: 10px 20px;
+        border: 1px solid var(--bs-primary);
+        color: var(--bs-primary);
+    }
+
+    .navbar-light .navbar-collapse {
+        margin-top: 15px;
+        border-top: 1px solid rgba(0, 0, 0, .08);
+    }
+
+    .navbar-light .navbar-nav .nav-link,
+    .sticky-top.navbar-light .navbar-nav .nav-link {
+        padding: 10px 0;
+        margin-left: 0;
+        color: var(--bs-white);
+    }
+
+    .navbar-light .navbar-brand img {
+        max-height: 45px;
+    }
+}
+
+@media (min-width: 992px) {
+    .navbar .nav-item .dropdown-menu {
+        display: block;
+        visibility: hidden;
+        top: 100%;
+        transform: rotateX(-75deg);
+        transform-origin: 0% 0%;
+        border: 0;
+        border-radius: 10px;
+        transition: .5s;
+        opacity: 0;
+    }
+
+    .navbar-light {
+        position: absolute;
+        width: 100%;
+        top: 0;
+        left: 0;
+        border-top: 0;
+        border-right: 0;
+        border-bottom: 1px solid;
+        border-left: 0;
+        border-style: dotted;
+        z-index: 999;
+    }
+    
+    .sticky-top.navbar-light {
+        position: fixed;
+        background: var(--bs-light);
+        border: none;
+    }
+
+    /* Efectos para la línea y triángulo */
+    .navbar-light .navbar-nav .nav-item::before {
+        position: absolute;
+        content: "";
+        width: 0; /* Inicialmente oculto */
+        height: 2px; /* Altura de la línea */
+        bottom: -1px; /* Posición vertical */
+        left: 50%; /* Centrado horizontalmente */
+        background: var(--bs-primary); /* Color de la línea */
+        transition: .5s; /* Transición suave */
+    }
+
+    .sticky-top.navbar-light .navbar-nav .nav-item::before {
+        bottom: 0; /* Ajusta la posición cuando es sticky */
+    }
+
+    .navbar-light .navbar-nav .nav-item::after {
+        content: "";
+        position: absolute;
+        bottom: 1px; /* Posición del triángulo */
+        left: 50%; /* Centrado horizontalmente */
+        transform: translateX(-50%); /* Centrado exacto */
+        border: 10px solid; /* Tamaño del triángulo */
+        border-color: transparent transparent var(--bs-primary) transparent; /* Color del triángulo */
+        opacity: 0; /* Inicialmente oculto */
+        transition: 0.5s; /* Transición suave */
+    }
+
+    /* Mostrar triángulo al pasar el ratón o estar activo */
+    .navbar-light .navbar-nav .nav-item:hover::after,
+    .navbar-light .navbar-nav .nav-item.active::after {
+        bottom: 1px; /* Posición del triángulo */
+        opacity: 1; /* Muestra el triángulo */
+    }
+
+    /* Mostrar línea al pasar el ratón o estar activo */
+    .navbar-light .navbar-nav .nav-item:hover::before,
+    .navbar-light .navbar-nav .nav-item.active::before {
+        width: calc(100% - 2px); /* Expande la línea al ancho completo menos un margen */
+        left: 1px; /* Ajusta la posición de la línea */
+    }
+
+    /* Ocultar indicador para un enlace específico */
+    .navbar-light .navbar-nav .nav-link.nav-contact::before {
+        display: none; 
+    }
+}
+/*** Navbar end ***/
+
+.card{
+    background-color: #2c3e50;
+}
+
+/*** Service Start ***/
+.service .service-item {
+    background: var(--bs-dark);
+    border-radius: 10px;
+    transition: 0.5s;
+    height: 100%;
+}
+
+.service .service-item:hover {
+    box-shadow: 0 0 45px rgba(0, 0, 0, .2);
+}
+
+.service .service-item .service-img {
+    position: relative;
+    overflow: hidden;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    transition: 0.5s;
+}
+
+.service .service-item .service-img img {
+    transition: 0.5s;
+}
+
+.service .service-item:hover .service-img img {
+    transform: scale(1.2);
+}
+/*** Service End ***/
+
+/*** Features Start ***/
+.feature .feature-item {
+    text-align: center;
+    border-radius: 10px;
+    background: var(--bs-dark);
+    border: 1px solid transparent;
+    transition: 0.5s;
+    height: 100%;
+}
+
+.feature .feature-item:hover {
+    border: 1px solid var(--bs-primary);
+}
+
+.feature .feature-item .feature-icon {
+    background: var(--bs-dark);
+    border-radius: 10px;
+    display: inline-block;
+}
+/*** Features End ***/
+
+/*** Team Start ***/
+.team .team-item {
+    position: relative;
+    padding: 0 25px 25px 25px;
+    border-radius: 10px;
+    transition: 0.5s;
+}
+
+.team .team-item::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+    left: 0;
+    background: var(--bs-light);
+    border-radius: 10px;
+    transition: 0.5s;
+    z-index: -1;
+}
+
+.team .team-item:hover::before {
+    height: 0;
+}
+
+.team .team-item::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 0;
+    bottom: 0;
+    left: 0;
+    border-radius: 10px;
+    transition: 0.5s;
+    z-index: -1;
+}
+
+.team .team-item:hover::after {
+    height: 100%;
+    background: var(--bs-primary);
+}
+
+.team .team-item .team-img {
+    width: 100%; 
+    height: 100%;
+    border-radius: 100%;
+    position: relative;
+    margin-top: 50%;
+    transform: translateY(-50%);
+    margin-bottom: -50%;
+    display: flex;
+    justify-content: center;
+    border: 4px solid var(--bs-primary);
+    border-style: dotted;
+    padding: 4px;
+    background: var(--bs-white);
+    transition: 0.5s;
+}
+
+.team .team-item:hover .team-img {
+    border: 4px solid var(--bs-white);
+    border-style: dotted;
+    background: 0;
+}
+
+.team .team-item .team-img img {
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+    transition: 0.5s;
+}
+
+.team .team-item .team-title {
+    padding: 25px 0 25px 0;
+    text-align: center;
+}
+
+.team .team-item .team-title h4,
+.team .team-item .team-title p {
+    transition: 0.5s;
+}
+
+.team .team-item:hover .team-title h4,
+.team .team-item:hover .team-title p {
+    color: var(--bs-white);
+}
+
+.team .team-item .team-icon {
+    display: flex;
+    justify-content: center;
+}
+
+.team .team-item .team-icon a {
+    transition: 0.5s;
+}
+
+.team .team-item:hover .team-icon a {
+    color: var(--bs-dark);
+    background: var(--bs-white);
+}
+
+.team .team-item:hover .team-icon a:hover {
+    color: var(--bs-primary);
+    background: var(--bs-dark);
+}
+/*** Team End ***/
+
+/* Estilos para el contenedor del paginador */
+.p-paginator {
+    background-color: #333; /* Color de fondo oscuro */
+    color: #fff; /* Color del texto */
+    border-radius: 4px; /* Bordes redondeados */
+    padding: 10px; /* Espaciado interno */
+}
+
+/* Estilos para los botones del paginador */
+.p-paginator .p-button {
+    background-color: transparent; /* Fondo transparente para los botones */
+    color: #fff; /* Color del texto en los botones */
+    border: 1px solid #555; /* Borde gris oscuro */
+    border-radius: 50%; /* Bordes completamente redondeados */
+    padding: 0.5rem; /* Espaciado interno para botones */
+    min-width: 2rem; /* Ancho mínimo para asegurar un botón circular */
+    height: 2rem; /* Altura fija para asegurar forma circular */
+    transition: background-color 0.3s, color 0.3s; /* Transición suave */
+}
+
+/* Cambiar color al pasar el mouse sobre los botones */
+.p-paginator .p-button:hover {
+    background-color: #555; /* Fondo gris más claro al pasar el mouse */
+}
+
+/* Estilo para el botón activo */
+.p-paginator .p-button.p-highlight {
+    background-color: #444; /* Fondo más oscuro para el botón activo */
+}
+
+/*** Footer Start ***/
+.footer {
+    background-color: #2c3e50;
+    color: var(--bs-primary);
+}
+
+.footer .footer-item a {
+    line-height: 35px;
+    color: var(--bs-primary);
+    transition: 0.5s;
+}
+
+.footer .footer-item p {
+    line-height: 35px;
+}
+
+.footer .footer-item a:hover {
+    letter-spacing: 1px;
+    color: var(--bs-white);
+}
+
+/* Modificaciones para los botones de redes sociales */
+.footer .footer-item .footer-btn a {
+    font-size: 1.5rem; /* Aumenta el tamaño de la fuente del ícono */
+    width: 50px; /* Ancho del botón */
+    height: 50px; /* Altura del botón */
+    display: flex; /* Para centrar el ícono */
+    align-items: center; /* Centra verticalmente el ícono */
+    justify-content: center; /* Centra horizontalmente el ícono */
+}
+
+.footer .footer-item .footer-btn a i {
+    transition: 0.5s;
+}
+
+.footer .footer-item .footer-btn a:hover {
+    background: var(--bs-white);
+}
+
+.footer .footer-item .footer-btn a:hover i {
+    color: var(--bs-primary) !important;
+}
+/*** Footer End ***/
